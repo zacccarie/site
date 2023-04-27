@@ -1,0 +1,53 @@
+
+
+.related-node {
+    opacity: 0.5;
+
+    }
+
+
+    .svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+    
+
+    .node {
+      fill: #000000;
+      stroke-width: 1px;
+    }
+
+    .label {
+      font-size: 8px;
+      text-anchor: middle;
+      fill: #838383;
+      font-family: sans-serif;
+   
+    }
+
+    .link {
+      stroke: #999;
+      stroke-opacity: 0.6;
+      stroke-width: 1.5px;
+    }
+
+   .node-hovered {
+      fill: yellow; /* Couleur de fond pour la node survolée */
+      stroke: rgb(255, 0, 0); /* Couleur de bordure pour la node survolée */
+      stroke-width: 2; /* Épaisseur de la bordure pour la node survolée */
+      
+}
+
+
+
+.related-node {
+    opacity: 0.5;
+
+    }
+
+
+
+
