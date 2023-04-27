@@ -17,7 +17,7 @@
 
     .node {
       fill: #000000;
-      stroke-width: 1px;
+      stroke-width: 3px;
     }
 
     .label {
@@ -31,7 +31,7 @@
     .link {
       stroke: #ff0000;
       stroke-opacity: 0.6;
-      stroke-width: 3 px;
+      stroke-width: 3px;
     }
 
    .node-hovered {
