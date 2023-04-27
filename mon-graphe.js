@@ -261,7 +261,8 @@ const svg = d3.select("svg")
     const link = svg.selectAll(".link")
       .data(links)
       .enter().append("line")
-      .attr("class", "link");
+      .attr("class", "link")
+      .style("stroke", "yellow");
 
 
 
