@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function() {
+
 /*
     const nodes = [
       { id: 1, name: "Node 1", type: "red"},
@@ -418,4 +420,4 @@ svg.selectAll(".node")
       })
       .classed("related-node", false); // Remplacez `related-node` par le nom de la classe CSS ou les styles que vous avez utilisés pour mettre en évidence les nodes en relation
   });
-
+});
