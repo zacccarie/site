@@ -1,7 +1,7 @@
 const Graph = ForceGraph3D()
                         (document.getElementById('3d-graph'))
                         
-                        .jsonUrl('../datasets/miserables.json')
+                        .jsonUrl('miserables.json')
 
                         .height(window.innerHeight - 60)
                         //.graphData(gData)
