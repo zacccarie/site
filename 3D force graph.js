@@ -1,8 +1,4 @@
-
-
-
-
-                    const Graph = ForceGraph3D()
+const Graph = ForceGraph3D()
                         (document.getElementById('3d-graph'))
                         
                         .jsonUrl('../datasets/miserables.json')
@@ -31,6 +27,3 @@
                         document.getElementById('3d-graph'),
                         el => Graph.width(el.offsetWidth)
                     );
-
-
-
