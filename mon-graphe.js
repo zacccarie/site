@@ -369,6 +369,11 @@ nodeGroup.selectAll("circle")
 
 var originalRadius;
 
+svg.selectAll(".label")
+    .attr("opacity", 1);
+
+
+
 svg.selectAll(".node")
   .on("mouseover", function(d) {
     // Obtenir l'objet de nœud survolé
