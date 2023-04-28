@@ -25,6 +25,8 @@
       text-anchor: middle;
       fill: #ffffff;
       font-family: sans-serif;
+      opacity: "1";
+
    
     }
 
@@ -38,6 +40,7 @@
       fill: yellow; /* Couleur de fond pour la node survolée */
       stroke: rgb(255, 0, 0); /* Couleur de bordure pour la node survolée */
       stroke-width: 2; /* Épaisseur de la bordure pour la node survolée */
+     
       
 }
 
