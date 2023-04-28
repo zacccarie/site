@@ -248,14 +248,14 @@ const svg = d3.select("svg")
       
 
 
-    const width = +svg.attr("width");
-    const height = +svg.attr("height");
+    const width = window.innerWidth / 2;
+    const height = window.innerHeight / 2;
     const radius = 80;
 
     const simulation = d3.forceSimulation(nodes)
       .force("charge", d3.forceManyBody().strength(-10))
       .force("link", d3.forceLink(links).distance(60))
-      .force("center", d3.forceCenter(height / 2, width / 2));
+      .force("center", d3.forceCenter(width, height));
 
     const link = svg.selectAll(".link")
       .data(links)
