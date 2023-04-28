@@ -255,7 +255,7 @@ const svg = d3.select("svg")
     const simulation = d3.forceSimulation(nodes)
       .force("charge", d3.forceManyBody().strength(-10))
       .force("link", d3.forceLink(links).distance(60))
-      .force("center", d3.forceCenter(1000 / 2, 800 / 2));
+      .force("center", d3.forceCenter(height / 2, width / 2));
 
     const link = svg.selectAll(".link")
       .data(links)
