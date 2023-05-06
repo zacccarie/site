@@ -70,8 +70,11 @@ function main() {
 
   const mixerInfos = [];
   {
+    const gltfUrl = 'https://raw.githubusercontent.com/zacccarie/site/main/testblendercube.gltf';
+
     const gltfLoader = new THREE.GLTFLoader();
-    gltfLoader.load('testblendercube.gltf', (gltf) => {
+    gltfLoader.load(gltfUrl, (gltf) => {
+
       const root = gltf.scene;
       scene.add(root);
 
