@@ -49,7 +49,7 @@ const nodes = [
 {id: 38, name: 'Anaconda', type: 'programm-used'},
 {id: 39, name: 'networkx plotly', type: 'librairie'},
 {id: 40, name: 'animation poster', type: 'object'},
-{id: 41, name: 'simulation', type: 'theme'},
+{id: 41, name: 'simulation', type: 'theme', url: 'www.coucou.com'},
 {id: 42, name: 'motion-design', type: 'nature'},
 {id: 43, name: '3D animation', type: 'dimension'},
 {id: 44, name: 'Cinema 4D/Octane', type: 'programm-used'},
