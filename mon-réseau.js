@@ -370,7 +370,7 @@ nodeGroup.selectAll("circle")
 var originalRadius;
 
 svg.selectAll(".label")
-    .attr("opacity", 1);
+    .attr("opacity", 0.5);
 
 
 
