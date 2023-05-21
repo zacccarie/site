@@ -5,7 +5,7 @@ const Graph = ForceGraph3D()
 
                         .height(window.innerHeight - 60)
                         //.graphData(gData)
-                        .backgroundColor("black")
+                        .backgroundColor("white")
                         //.nodeColor(node => "red")
                         //.nodeOpacity(1)
                         .linkColor(links => "white")
