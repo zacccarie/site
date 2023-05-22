@@ -10,7 +10,7 @@ const Graph = ForceGraph3D()
                         //.nodeOpacity(1)
                         .linkColor(links => "black")
                         .linkWidth(1)
-                        .linkOpacity(1)
+                        .linkOpacity(0.3)
                         
                         .showNavInfo(false)
 
