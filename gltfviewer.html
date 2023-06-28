@@ -1,0 +1,141 @@
+<style>
+  /* Style pour le conteneur de la scène Three.js */
+  #scene-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Empêche les interactions de la souris avec la scène */
+    z-index: -1; /* Assure que la scène est positionnée en arrière-plan */
+  }
+  
+  /* Styles pour les éléments Webflow à superposer */
+  .webflow-elements {
+    position: relative;
+    z-index: 1; /* Assure que les éléments Webflow sont positionnés au-dessus */
+  }
+  
+  /* Styles pour le paragraphe de faux texte */
+  #fake-text {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Assure que le paragraphe est positionné au-dessus de la scène */
+    color: black;
+    font-size: 24px;
+    white-space: nowrap;
+    width: 40vw;
+    position: relative
+  }
+  
+  @keyframes scrollText {
+    0% {
+      transform: translate(-50%, -50%);
+    }
+    100% {
+      transform: translate(-50%, -50%) translateY(-100%);
+    }
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/gh/zacccarie/site@main/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/zacccarie/site@main/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/zacccarie/site@main/GLTFLoader.js"></script>
+<div id="scene-container"></div>
+
+
+
+
+<script>
+  let scene, camera, renderer;
+  let rotationSpeed = 0.2; // Vitesse de rotation en fonction du scroll
+  let targetRotationY = 0; // Rotation cible sur l'axe Y
+
+  function init() {
+    scene = new THREE.Scene();
+
+    camera = new THREE.PerspectiveCamera(
+      40,
+      window.innerWidth / window.innerHeight,
+      1,
+      5000
+    );
+    camera.position.z = 1000;
+
+    const hlight = new THREE.AmbientLight(0x404040, 100);
+    scene.add(hlight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(0, 1, 0);
+    directionalLight.castShadow = true;
+    scene.add(directionalLight);
+
+    const light = new THREE.PointLight(0xc4c4c4, 1);
+    light.position.set(0, 300, 500);
+    scene.add(light);
+    light2 = new THREE.PointLight(0xc4c4c4, 1);
+    light2.position.set(500, 100, 0);
+    scene.add(light2);
+    light3 = new THREE.PointLight(0xc4c4c4, 1);
+    light3.position.set(0, 100, -500);
+    scene.add(light3);
+    light4 = new THREE.PointLight(0xc4c4c4, 1);
+    light4.position.set(-500, 300, 500);
+    scene.add(light4);
+
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearAlpha(0);
+    document.getElementById('scene-container').appendChild(renderer.domElement);
+
+    const loader = new THREE.GLTFLoader();
+    const glbUrl = "https://raw.githubusercontent.com/zacccarie/site/main/monskull.gltf"; // Remplacez par l'URL directe de votre fichier GLB
+
+    loader.load(glbUrl, function (gltf) {
+      const car = gltf.scene.children[0];
+      car.scale.set(10, 10, 10);
+      scene.add(gltf.scene);
+
+      // Centrer l'objet
+      const bbox = new THREE.Box3().setFromObject(car);
+      const center = bbox.getCenter(new THREE.Vector3());
+      car.position.x -= center.x;
+      car.position.y -= center.y;
+      car.position.z -= center.z;
+
+      car.rotation.x = Math.PI / -2;
+
+      animate();
+    });
+
+    // Ajouter l'écouteur d'événement pour le scroll de la souris
+    window.addEventListener("wheel", handleMouseWheel);
+
+    // Ajouter l'écouteur d'événement pour redimensionner la fenêtre
+    window.addEventListener("resize", handleWindowResize);
+  }
+
+  function animate() {
+    // Appliquer la rotation cible sur l'axe Y à l'objet
+    scene.traverse(function (object) {
+      if (object.isMesh) {
+        object.rotation.z = targetRotationY;
+      }
+    });
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+
+  function handleMouseWheel(event) {
+    // Ajuster la rotation cible sur l'axe Y en fonction du déplacement vertical de la souris
+    const delta = event.wheelDelta ? event.wheelDelta / 120 : event.deltaY / 3;
+    targetRotationY += rotationSpeed * delta;
+  }
+
+  function handleWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  }
+
+  init();
+</script>
