@@ -1,4 +1,3 @@
- <script>
         const nodes = [
         {id:0, name:  ' test ' , type: ' test ' },
    {id:1, name:  ' Astral map ' , type: ' project ' },
@@ -659,4 +658,3 @@ node.append("circle")
         function zoomed() {
             g.attr("transform", d3.event.transform);
         }
-    </script>
