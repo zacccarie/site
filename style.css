@@ -1,56 +1,62 @@
+        body {
+            background-color: black;
+        }
 
+        .svg {
+            position: absolute;
 
-.related-node {
-    opacity: 0.5;
-
-    }
-
-
-    .svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-    }
-    
-
-    .node {
-      fill: #000000;
-      stroke-width: 3px;
-    }
-
-    .label {
-      font-size: 8px;
-      text-anchor: middle;
-      fill: #ffffff;
-      font-family: sans-serif;
-      opacity: 1;
-
-   
-    }
-
-    .link {
-      stroke: #ff0000;
-      stroke-opacity: 1;
-      stroke-width: 3px;
-    }
-
-   .node-hovered {
-      fill: yellow; /* Couleur de fond pour la node survolée */
-      stroke: rgb(255, 0, 0); /* Couleur de bordure pour la node survolée */
-      stroke-width: 2; /* Épaisseur de la bordure pour la node survolée */
-     
-      
-}
-
-
-
-.related-node {
-    opacity: 0.5;
-
-    }
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
 
 
 
 
+        .node {
+            stroke-width: 1px;
+            /*stroke: black; /* Couleur de contour par défaut */
+        }
+
+        .label {
+            font-size: 8px;
+            text-anchor: middle;
+            fill: #ffffff;
+            font-family: sans-serif;
+            opacity: 1;
+        }
+
+        .link {
+            stroke: #ffffff;
+            stroke-opacity: 0.5;
+            stroke-width: 1px;
+        }
+
+        .node-hovered {
+            fill: rgb(0, 13, 255);
+            stroke-width: 2;
+        }
+
+        .related-node {
+            fill: rgb(52, 52, 52);
+        }
+
+        .related-link {
+            stroke: rgb(30, 255, 0);
+            stroke-opacity: 1;
+        }
+
+        .highlighted {
+            fill: rgb(255, 0, 98);
+        }
+
+
+
+
+
+
+
+
+        .non-connected-node{
+            opacity: 0.5;
+        }
