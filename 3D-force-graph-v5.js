@@ -1,7 +1,7 @@
 const Graph = ForceGraph3D()
                         (document.getElementById('3d-graph'))
                         
-                        .jsonUrl('https://cdn.jsdelivr.net/gh/zacccarie/site@main/miserables.json')
+                        .jsonUrl('https://cdn.jsdelivr.net/gh/zacccarie/site@main/starwars-episode-5-interactions.json')
 
                         .height(window.innerHeight - 60)
                         //.graphData(gData)
